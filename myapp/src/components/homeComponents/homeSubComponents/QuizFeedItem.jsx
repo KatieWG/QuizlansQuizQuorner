@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { HashRouter as Router, Route, Switch, Link } from 'react-router-dom';
+
 
 const Container = styled.div`
   border-radius: var(--standard-border-radius);
@@ -94,7 +96,8 @@ const QuizFeedItem = ({
 
   const handleQuizSelect = () => {
     console.log(event.target.value);
-    //need to link here!!!
+    window.location.href = 'http://localhost:8080/#/takequiz';
+    setSelectedQuiz(event.target.value);
   };
 
   const report = () => {
@@ -129,7 +132,17 @@ const QuizFeedItem = ({
         <img src={`${banner}`} />
       </Banner>
       <TextData>
-        <Name onClick={() => handleQuizSelect(event)}>{quizName}</Name>
+        <Link
+                style={linkStyle}
+                to={{
+                  pathname: '/takequiz',
+                  state: { quizSelected: quizName },
+                }}
+                onClick={()=>{setSelectedQuiz(quizName)}}
+              >
+                {quizName}
+        </Link>
+        {/*<Name value={quizName} onClick={() => handleQuizSelect(event)}>{quizName}</Name>*/}
         <Category>{category}</Category>
         <Author>Author: {createdBy}</Author>
         <TimesTaken>{timesTaken} people have taken this quiz</TimesTaken>
@@ -206,3 +219,19 @@ const Description = styled.div`
   align-items: center;
   justify-content: center;
 `;
+
+
+const linkStyle = {
+  'grid-row': '1 / span 1',
+  'grid-column': '2 / span 1',
+  'font-size': 'var(--minor-heading-size)',
+ ' font-weight': 'var(--minor-heading-weight)',
+    'color': 'var(--text-color)',
+  //word-wrap: break-word;
+  //&:hover {
+  //  'color': var(--background-color);
+  //  cursor: pointer;
+  //  textdecoration: underline;
+  //}
+  'padding': '10px'
+};

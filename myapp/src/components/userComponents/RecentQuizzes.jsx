@@ -32,13 +32,17 @@ const RecentQuizzes = (props) => {
 
 
   const getRecentQuizzes = () => {
-    axios.get('/quizzes/')
-      .then((response)=> {
-        //console.log('💋💋💋💋💋', response.data)
-        setRecentQuizzes(response.data)
+    console.log('adsfasdfgadsfasdfsd', props.userName)
+    const username = 'superuser';
+    const categoryName = null;
+    const isReported = null;
+    axios.get(`http://52.90.8.77:4444/quizzes/${username}&${categoryName}&${isReported}`)
+      .then((response) => {
+        console.log('USER QUIZZES!!! YAYAYAYAYYA:', response.data);
+        setRecentQuizzes(response.data);
       })
-      .catch((error)=> {
-        console.error(error)
+      .catch((err) => {
+        console.log(err);
       })
   }
 
@@ -51,7 +55,7 @@ const RecentQuizzes = (props) => {
   //! Commenting this out rn because the request is going to nowhere, but does need to go back in:::::::
   useEffect(()=> {
    getRecentQuizzes()
-   console.log('user qquiz history:', props.quizHistory)
+   console.log('user qquiz history:', recentQuizzes)
   }, [])
 
   //
@@ -63,8 +67,8 @@ const RecentQuizzes = (props) => {
         {/* {props.quizHistory.map((quiz, key) => (
           <RecentQuiz quiz={quiz} key={key}/>
         ))} */}
-        {props.quizHistory?.length > 0 &&
-        props.quizHistory.map((listItem, index) => {
+        {recentQuizzes?.length > 0 &&
+        recentQuizzes.map((listItem, index) => {
           return (
             <RecentQuiz
               quizName={listItem.quizName}

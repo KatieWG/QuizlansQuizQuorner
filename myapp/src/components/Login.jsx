@@ -139,7 +139,7 @@ const Login = ({
         </span>
       </FormLine>
       <Note>If you do not have an account yet, sign up in this form with the same credentials!</Note>
-      <Note>All user emails must be in a valid format, and all user passwords must be at least six characters in length</Note>
+      <Note>All user emails must be in a valid format, and all user passwords must be at least six characters in length.</Note>
     </FormBox>
   );
 };
@@ -161,7 +161,7 @@ const FormBox = styled.form`
 
 const StyledButton = styled.button`
   background-color: var(--accent-color);
-  text-color: var(--text-color);
+  color: var(--text-color);
   border-radius: var(--standard-border-radius);
   border-width: 0;
   box-shadow: var(--standard-shadow);

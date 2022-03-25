@@ -189,7 +189,7 @@ const App = () => {
               <Link style={linkStyle} to='/'></Link>
             </NavBarHeading>
           )}
-          {stringifiedUser !== '{}' && (
+          {stringifiedUser !== '{}'  && (
             <NavBarHeading>
               <Link style={linkStyle} to='/home'>
                 Home
@@ -239,7 +239,7 @@ const App = () => {
           )}
           {stringifiedUser !== '{}' && (
             <NavBarForm>
-              <Select options={allQuizzes} onChange={handleSearchSubmit}>
+              <Select style="color: black" options={allQuizzes} onChange={handleSearchSubmit}>
                 Search for a Quiz to Take!
               </Select>
             </NavBarForm>
@@ -318,7 +318,7 @@ const NavBarHeading = styled.span`
 
 const NavBarForm = styled.form`
   background-color: var(--blue);
-  color: var(--text-color);
+  color: black;
   padding: var(--standard-padding);
 `;
 
@@ -334,4 +334,5 @@ const NavBar = styled.span`
 
 const linkStyle = {
   'text-decoration': 'none',
+  'color': 'var(--text-color)',
 };

@@ -4,6 +4,9 @@ import styled from 'styled-components';
 import testimonialPhoto1 from '../images/testimonialPhoto1.png';
 import testimonialPhoto2 from '../images/testimonialPhoto2.png';
 import testimonialPhoto3 from '../images/testimonialPhoto3.png';
+import createQuizPage from '../images/CreateQuizPage.png';
+import homePage from '../images/HomePage.png';
+import takeQuizPage from '../images/TakeQuizPage.png';
 
 const LandingPage = () => {
   return (
@@ -16,38 +19,29 @@ const LandingPage = () => {
       <div id='intro1'>
         <InlineDuo>
           <LeftPhoto>
-            <img
-              alt='Create quiz page screenshot *INSERT CREATE QUIZ PAGE SCREENSHOT HERE ONCE COMPLETE AND LOADABLE*'
-              src={testimonialPhoto1}
-            ></img>
+            <img alt='Create quiz page screenshot' src={createQuizPage}></img>
           </LeftPhoto>
         </InlineDuo>
         <InlineDuo>
           <RightText>
-            Create a quiz to study for your next midterm exam
+            Create a quiz to study for your next midterm exam!
           </RightText>
         </InlineDuo>
       </div>
       <div id='intro2'>
         <InlineDuo>
-          <LeftText>Take a pre-built quiz to sharpen your skills.</LeftText>
+          <LeftText>Take a pre-built quiz to sharpen your skills!</LeftText>
         </InlineDuo>
         <InlineDuo>
           <RightPhoto>
-            <img
-              alt='Take quiz page screenshot *INSERT TAKE QUIZ PAGE SCREENSHOT HERE ONCE COMPLETE AND LOADABLE*'
-              src={testimonialPhoto1}
-            ></img>
+            <img alt='Take quiz page screenshot' src={takeQuizPage}></img>
           </RightPhoto>
         </InlineDuo>
       </div>
       <div id='rhetoricalIntro3'>
         <InlineDuo>
           <LeftPhoto>
-            <img
-              alt='Create quiz page screenshot *INSERT CREATE QUIZ PAGE SCREENSHOT HERE ONCE COMPLETE AND LOADABLE. OR...REPLACE WITH ANOTHER FUNCTION?*'
-              src={testimonialPhoto1}
-            ></img>
+            <img alt='Home page screenshot' src={homePage}></img>
           </LeftPhoto>
         </InlineDuo>
         <InlineDuo>
@@ -81,8 +75,8 @@ const LandingPage = () => {
           </Testimonial>
         </InlineTrio>
       </div>
-      <StyledH2 id='getStartedHeading'>How to Get Started</StyledH2>
-      <StyledH3 id='getStartedInfo1'>Step One: Sign Up for an Account</StyledH3>
+      <StyledH2 id='getStartedHeading'>How to Get Started:</StyledH2>
+      <StyledH3 id='getStartedInfo1'>Step One: Sign Up for an Account!</StyledH3>
       <StyledH3 id='getStartedInfo'>Step Two: Start Taking Quizzes!</StyledH3>
       <Link to='/login'>
         <center>
@@ -91,6 +85,10 @@ const LandingPage = () => {
       </Link>
     </FirstNesting>
   );
+};
+
+const imgStyle = {
+  'box-shadow': 'var(--standard-shadow)',
 };
 
 const FirstNesting = styled.div`
@@ -156,7 +154,7 @@ const InlineTrio = styled.span`
 
 const StyledButton = styled.button`
   background-color: var(--accent-color);
-  text-color: var(--text-color);
+  color: var(--text-color);
   border-radius: var(--standard-border-radius);
   border-width: 0;
   box-shadow: var(--standard-shadow);
