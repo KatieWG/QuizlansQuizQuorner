@@ -333,7 +333,7 @@ const NavBar = styled.span`
   background-color: var(--blue);
   color: var(--text-color);
   display: flex;
-  // justify-content: space-evenly;
+  justify-content: space-evenly;
   align-items: center;
   margin: -10px;
   box-shadow: var(--standard-shadow);
