@@ -16,43 +16,39 @@ Quizlin's Quiz Quorner is an interactive quiz site where users can see, make, an
 
 ## 🟡 Demo
 
-#### 🔎 Themes
+### 🔎 Take a Quiz
 
-![Dark and Light Mode](https://i.imgur.com/0ziMtKx.gif)
+![Take a Quiz](https://recordit.co/Iymz9v7E2N.gif)
 
-#### 🔎 Landing Page and Navigation Bar
+### 🔎 Themes
 
-![Landing Page](https://i.imgur.com/th8qJJy.gif)
+![Dark and Light Mode](https://recordit.co/qkcDVO5TQx.gif)
+
+### 🔎 Landing Page and Navigation Bar
+
+![Landing Page](https://recordit.co/y7x6YCyxtu.gif)
 The user arrives at this page upon loading the site.  It shows a few testimonials until the bottom of the screen is reached via scroll.  There is then a button directing the user to either sign up or log in.  The user also has the option to log in using the navigation bar, which only displays this option on the landing page.
-![Login Page](http://g.recordit.co/4lgHIJnm8B.gif)
-The login page presents users with the options of creating an account or signing in. All user authentication is managed by firebase.
-![Navigation Bar](https://i.imgur.com/FrY1GE7.gif)
-After logging in, the user has the option to select either the "Create a Quiz", "Take a Quiz", "Home", or "User" pages, while also having the option to log out.  They can also select a particular quiz in the database, which will route them directly to the page to take this particular quiz.
 
-#### 🔎 Home Page
+![Login Page](https://recordit.co/CAj92IqleB.gif)
+The login page presents users with the options of creating an account or signing in. All user authentication is managed by firebase.
+
+### 🔎 Create a Quiz
+
+The user is able to start creating a fully personalizable quiz with inputs for a title, category, and description. The user also has the ability to add any number of questions they'd like, and easily select the correct answer for future quiz-takers.
+
+![Create a Quiz](https://recordit.co/CHSL1gs3H3.gif)
+
+The user can even choose a banner image to grab the attention of other users. In the column on the right, they can also view all of the questions they've created thus far.
+
+### 🔎 Home Page
 The home page renders a quiz feed that is updated with any new quiz creations (sorted by most to least recently added).  The user is able to scroll through the feed while their friend's list and a list of popular quizzes stay locked on the left and right.
 
 Each quiz is rendered with its banner image, title, description, author, as well as percentage of successful takes, and the ability to rate or report each quiz.
 
-#### 🔎 Create a Quiz
+loading gif...
 
-![Text input fields](http://g.recordit.co/xUzhnzFfPE.gif)
-
-The user is able to start creating a fully personalizable quiz with inputs for a title, category, and description.
-
-![Add Question](http://g.recordit.co/wPQl4S0axS.gif)
-
-The user has the ability to add any number of questions they'd like, and easily select the correct answer for future quiz-takers.
-
-![Add Banner and Question Area](http://g.recordit.co/DMtwi12gjS.gif)
-
-The user can choose a banner image to grab the attention of other users.  They can also view all of the questions they've created thus far.
-
-#### 🔎 User Page
-loading...
-
-#### 🔎 Take a Quiz
-loading...
+### 🔎 User Page
+loading gif...
 
 ## 🚀 Installation and Setup
 ```
