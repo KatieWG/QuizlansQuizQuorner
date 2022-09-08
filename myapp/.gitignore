@@ -1,10 +1,15 @@
 
 .cache/
 coverage/
-dist/*
-!dist/index.html
+dist/bundle.js
 node_modules/
 *.log
+package-lock.json
+firebaseNotes.todo
+config.js
+mytasks.todo
+.vscode/settings.json
+TODO
 
 # OS generated files
 .DS_Store
@@ -14,3 +19,6 @@ node_modules/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+package-lock.json
+firebase.js
