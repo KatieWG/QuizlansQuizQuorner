@@ -10,6 +10,7 @@ const NewQuiz = styled.div`
   grid-template-rows: 20% 50% 30%;
   grid-template-columns: 30% 70%;
   background-color: var(--background-color);
+  margin-top: 40px;
 `;
 
 const ChosenIMG = styled.img`
@@ -30,16 +31,18 @@ const Gallery = styled.div`
   grid-row-start: 2;
   grid-column: 2 / span 1;
   overflow: scroll;
-  background-color: var(--blue);
-  border-radius: var(--standard-border-radius);
-  box-shadow: inset 0 0 7px #000000;
+  background-color: var(--background-color);
+  border-radius: 2px;
+  margin-top: 50px;
 `;
 
-const QuizName = styled.input``;
+const QuizName = styled.input`
+  height: 40px;
+`;
 
 const EachQuestion = styled.div`
-  background-color: var(--accent-color);
-  border: 5px solid var(--accent-color);
+  background-color: var(--background-color);
+  border: 5px solid var(--blue);
   margin: var(--standard-margin);
   padding: var(--standard-padding);
   border-radius: var(--standard-border-radius);
@@ -55,14 +58,15 @@ const TextInputs = styled.div`
   grid-column: 1 / span 1;
 `;
 
-const Description = styled.textarea``;
+const Description = styled.textarea`
+`;
 
 const IMG = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
   border: 5px solid transparent;
-  border-radius: var(--standard-border-radius);
+  border-radius: var(--blue);
   box-shadow: var(--standard-shadow);
 `;
 
@@ -72,16 +76,15 @@ const CreatedQuestions = styled.div`
   margin: var(--standard-margin);
   //box-sizing: border-box;
   height: 250px;
-  box-shadow: inset 0 0 7px #000000;
-  background-color: var(--blue);
+  background-color: var(--accent-color);
   padding: var(--standard-padding);
-  border-radius: var(--standard-border-radius);
+  border-radius: 2px;
   over-flow: scroll;
 `;
 
 const FakeDiv = styled.div`
   height: 99%;
-  background-color: var(--blue);
+  background-color: var(--background-color);
   display: grid;
   grid-template-rows: repeat(10, 200px);
   grid-template-columns: repeat(2, 1fr);
@@ -92,21 +95,21 @@ const FakeDiv = styled.div`
 `;
 
 const AddQButton = styled.button`
-  height: 100px;
-  width: 200px;
-  background-color: var(--accent-color);
+  height: 50px;
+  background-color: var(--blue);
   border-radius: var(--standard-border-radius);
-  margin: var(--standard-margin);
+  font-size: 1.3em;
+  margin-top: 20px;
 `;
 
 const SubmitBtn = styled.button`
-  height: 100px;
-  width: 200px;
+  height: 50px;
   background-color: var(--accent-color);
   border-radius: var(--standard-border-radius);
   position: relative;
   bottom: 90%;
-  margin: var(--standard-margin);
+  font-size: 1.3em;
+  margin-top: -210px;
 `;
 
 const CreateQuiz = ({ userName }) => {
@@ -168,12 +171,12 @@ const CreateQuiz = ({ userName }) => {
 
   return (
     <NewQuiz>
-      <CreatedQuestions>
+      <CreatedQuestions style={{ backgroundColor: "transparent"}}>
+      <h3 style={{ backgroundColor: "transparent", marginLeft: 20 }}>
+            Questions:
+          </h3>
         <FakeDiv>
-          <EachQuestion>
-            This is where you'll find all of the questions you've already
-            created!
-          </EachQuestion>
+          <br/>
           {newQuizQuestions?.length > 0 &&
             newQuizQuestions.map((question, index) => {
               return (
@@ -189,9 +192,11 @@ const CreateQuiz = ({ userName }) => {
         </FakeDiv>
       </CreatedQuestions>
       <TextInputs>
-        <label>Quiz Name:</label>
+        <label style={{ fontSize: 30 }}>Quiz Name:</label>
         <QuizName
+          style={{ fontSize: 18 }}
           type='text'
+          size='40'
           placeholder='Quiz Name'
           value={newQuizTitle}
           onChange={() => {
@@ -199,8 +204,10 @@ const CreateQuiz = ({ userName }) => {
           }}
         ></QuizName>
         <br></br>
-        <label>Select a Category:</label>
-        <select onChange={handleCategorySelect}>
+        <label style={{ fontSize: 24 }}>
+          Select a Category:
+        </label>
+        <select style={{ fontSize: 18, height: 24 }} onChange={handleCategorySelect}>
           <option value='Animals'>Animals</option>
           <option value='Pop Culture'>Pop Culture</option>
           <option value='History'>History</option>
@@ -209,8 +216,8 @@ const CreateQuiz = ({ userName }) => {
           <option value='Science'>Science</option>
           <option value='TV and Movies'>TV and Movies</option>
         </select>
-        <br></br>
-        <label>Quiz Description:</label>
+        <br/>
+        <label style={{ fontSize: 24 }}>Quiz Description:</label>
         <Description
           name='DescriptionInput'
           cols='40'
@@ -222,7 +229,7 @@ const CreateQuiz = ({ userName }) => {
         ></Description>
       </TextInputs>
       <Gallery>
-        <h3>Select a Banner Image</h3>
+        <h3 style={{marginLeft: 20}}>Select a Banner Image</h3>
         {bannerOptions?.map((image, index) => {
           if (image === newQuizBanner) {
             return (
@@ -246,14 +253,13 @@ const CreateQuiz = ({ userName }) => {
           );
         })}
       </Gallery>
-      <AddQButton
-        onClick={() => {
-          setToggleModal(true);
-        }}
-      >
+
+      <AddQButton onClick={() => {setToggleModal(true);}}>
         Add Question
       </AddQButton>
-      <SubmitBtn onClick={handleQuizSubmission}>Submit Quiz</SubmitBtn>
+      <SubmitBtn onClick={handleQuizSubmission}>
+        Submit Quiz
+      </SubmitBtn>
       {toggleModal && (
         <AddQuestionModal
           setToggleModal={setToggleModal}

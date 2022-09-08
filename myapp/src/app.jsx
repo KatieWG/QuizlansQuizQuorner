@@ -182,6 +182,7 @@ const App = () => {
       {docData ? <div></div> : null}
       <div>
         <NavBar>
+
         <NavBarLogo alt='Page logo' src={logo}></NavBarLogo>
           <NavBarTitle>QuizKnows</NavBarTitle>
           {/* <div style={{ marginRight: -100 }}> */}
@@ -333,7 +334,7 @@ const NavBar = styled.span`
   background-color: var(--blue);
   color: var(--text-color);
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   margin: -10px;
   box-shadow: var(--standard-shadow);

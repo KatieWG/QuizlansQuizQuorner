@@ -92,50 +92,52 @@ const imgStyle = {
 };
 
 const FirstNesting = styled.div`
-  background-color: var(--blue);
+  //background-color: var(--blue);
   text-color: var(--text-color);
   border-radius: var(--standard-border-radius);
-  box-shadow: var(--standard-shadow);
-  width: 90%;
+  //box-shadow: var(--standard-shadow);
+  width: 100%;
   margin: auto;
 `;
 
 const LeftText = styled.div`
-  background-color: var(--accent-color);
+  // background-color: var(--accent-color);
   text-color: var(--text-color);
   margin: var(--standard-margin);
   border-radius: var(--standard-border-radius);
-  box-shadow: var(--standard-shadow);
+  // box-shadow: var(--standard-shadow);
   padding: var(--standard-padding);
-  margin-left: 30%;
-  text-align: left;
+  margin-left: 20%;
+  text-align: center;
   float: left;
+  font-size: 2em;
 `;
 
 const LeftPhoto = styled.div`
   text-color: var(--text-color);
   margin: var(--standard-margin);
   padding: var(--standard-padding);
-  margin-left: 30%;
+  margin-left: 20%;
   float: left;
 `;
 
 const RightText = styled.div`
-  background-color: var(--accent-color);
+  // background-color: var(--accent-color);
   text-color: var(--text-color);
   margin: var(--standard-margin);
   border-radius: var(--standard-border-radius);
-  box-shadow: var(--standard-shadow);
+  // box-shadow: var(--standard-shadow);
   padding: var(--standard-padding);
-  margin-right: 30%;
-  text-align: right;
+  margin-right: 20%;
+  text-align: center;
   float: right;
+  font-size: 2em;
 `;
 
 const RightPhoto = styled.div`
   margin: var(--standard-margin);
   padding: var(--standard-padding);
-  margin-right: 30%;
+  margin-right: 20%;
   float: right;
 `;
 
@@ -146,10 +148,10 @@ const InlineDuo = styled.span`
 `;
 
 const InlineTrio = styled.span`
-  display: inline-block;
   width: 33%;
   margin: auto;
-  margin-top: 50px;
+  display: inline-block;
+  vertical-align: bottom;
 `;
 
 const StyledButton = styled.button`
@@ -170,7 +172,7 @@ const StyledH1 = styled.h1`
   box-shadow: var(--standard-shadow);
   padding: var(--standard-padding);
   text-align: center;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
   width: 80%;
@@ -183,10 +185,10 @@ const StyledH2 = styled.h2`
   box-shadow: var(--standard-shadow);
   padding: var(--standard-padding);
   text-align: center;
-  margin-top: 20px;
+  margin-top: 50px;
   margin-left: auto;
   margin-right: auto;
-  width: 30%;
+  width: 20%;
 `;
 
 const StyledH3 = styled.h3`
@@ -213,6 +215,8 @@ const Testimonial = styled.div`
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+  // display: inline-block;
+  // vertical-align: bottom;
 `;
 
 export default LandingPage;

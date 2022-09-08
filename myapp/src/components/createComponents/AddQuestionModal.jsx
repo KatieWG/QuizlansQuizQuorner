@@ -18,40 +18,58 @@ const Form = styled.div`
   width: 40%;
   height: 50%;
   display: grid;
-  grid-template-columns: 80% 20%;
+  grid-template-columns: 75% 25%;
   border-radius: var(--standard-border-radius);
   box-shadow: var(--standard-shadow);
-  grid-template-rows: 10% 70% 20%;
-  padding: var(--standard-padding);
+  grid-template-rows: 10% 30% 50% 10%;
+  padding: 20px;
 `;
 
 const Radios = styled.div`
   grid-column-start: 2;
+  grid-row: 3 / span 1;
   display: flex;
-  justify-content: space-around;
+  justify-content: stretch;
   align-content: center;
   flex-direction: column;
-  grid-row: 2 / span 1;
+  margin-bottom: 60px;
 `;
 
 const TextInputs = styled.div`
   grid-column: 1 / span 1;
+  grid-row: 3 / span 1;
+  display: flex;
+  justify-content: stretch;
+  align-content: bottom;
+  flex-direction: column;
+`;
+
+const QuestionInput = styled.div`
+  grid-column: 1 / -1;
   grid-row: 2 / span 1;
   display: flex;
   justify-content: center;
-  align-content: center;
+  align-content: top;
   flex-direction: column;
+`;
+
+const AnswerInput = styled.input`
+  height: 24px;
 `;
 
 const CloseButton = styled.button`
   grid-row: 1 / span 1;
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 27px;
   text-align: center;
+  background-color: #ff605c;
 `;
 
 const SubmitButton = styled.button`
-  grid-row: 3 / span 1;
+  grid-row: 4 / span 1;
+  margin-right: auto;
+  width: 300px;
+  font-size: 1.4em;
 `;
 
 const AddQuestionModal = ({
@@ -114,9 +132,10 @@ const AddQuestionModal = ({
         >
           x
         </CloseButton>
-        <div>Select Correct Answer</div>
+        {/* <div>Correct Answer...</div> */}
         <Radios>
           <input
+            style={{ height: 26 }}
             type='radio'
             name='choice'
             value='choice-1'
@@ -125,7 +144,9 @@ const AddQuestionModal = ({
               setCorrectAnswer(answer1);
             }}
           ></input>
+          <br/>
           <input
+            style={{ height: 26 }}
             type='radio'
             name='choice'
             value='choice-2'
@@ -134,7 +155,9 @@ const AddQuestionModal = ({
               setCorrectAnswer(answer2);
             }}
           ></input>
+          <br/>
           <input
+            style={{ height: 26 }}
             type='radio'
             name='choice'
             value='choice-3'
@@ -143,7 +166,9 @@ const AddQuestionModal = ({
               setCorrectAnswer(answer3);
             }}
           ></input>
+          <br/>
           <input
+            style={{ height: 26 }}
             type='radio'
             name='choice'
             value='choice-4'
@@ -153,52 +178,50 @@ const AddQuestionModal = ({
             }}
           ></input>
         </Radios>
-        <TextInputs>
+        <QuestionInput>
           <input
+            style={{ height: 75 }}
             type='text'
             placeholder='Question'
             onChange={() => {
               setNewQuestion(event.target.value);
             }}
           ></input>
-          <br></br>
-          <label></label>
-          <input
+          </QuestionInput>
+          <TextInputs>
+          <AnswerInput
             type='text'
             placeholder='Answer'
             onChange={() => {
               setAnswer1(event.target.value);
             }}
-          ></input>
+          ></AnswerInput>
           {/*<input type='radio'></input>*/}
-
-          <br></br>
-          <input
+          <br/>
+          <AnswerInput
             type='text'
             placeholder='Answer'
             onChange={() => {
               setAnswer2(event.target.value);
             }}
-          ></input>
+          ></AnswerInput>
           {/*<input type='radio'></input>*/}
-
-          <br></br>
-          <input
+          <br/>
+          <AnswerInput
             type='text'
             placeholder='Answer'
             onChange={() => {
               setAnswer3(event.target.value);
             }}
-          ></input>
-
-          <br></br>
-          <input
+          ></AnswerInput>
+<br/>
+          <AnswerInput
             type='text'
             placeholder='Answer'
             onChange={() => {
               setAnswer4(event.target.value);
             }}
-          ></input>
+          ></AnswerInput>
           {/*<input type='radio'></input>*/}
         </TextInputs>
         <SubmitButton onClick={handleQuestionSubmit}>Add Question</SubmitButton>
