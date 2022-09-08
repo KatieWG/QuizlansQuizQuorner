@@ -92,6 +92,7 @@ const TakeQuiz = (props) => {
   const chooseQuiz = (quizName) => { //change to quizId later
     // setQuiz(quizId);
     setQuiz(quizName);
+    // setColor()
   }
 
   const chosenQuiz = () => {

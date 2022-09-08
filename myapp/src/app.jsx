@@ -182,69 +182,71 @@ const App = () => {
       {docData ? <div></div> : null}
       <div>
         <NavBar>
-          <NavBarLogo alt='Page logo' src={logo}></NavBarLogo>
-          <NavBarTitle>Quizlin's Quiz Quorner</NavBarTitle>
-          {stringifiedUser === '{ALWAYSFALSE}' && (
-            <NavBarHeading>
-              <Link style={linkStyle} to='/'></Link>
-            </NavBarHeading>
-          )}
-          {stringifiedUser !== '{}'  && (
-            <NavBarHeading>
-              <Link style={linkStyle} to='/home'>
-                Home
-              </Link>
-            </NavBarHeading>
-          )}
-          {stringifiedUser !== '{}' && (
-            <NavBarHeading>
-              <Link style={linkStyle} to='/user'>
-                User
-              </Link>
-            </NavBarHeading>
-          )}
-          {stringifiedUser !== '{}' && (
-            <NavBarHeading>
-              <Link style={linkStyle} to='/createquiz'>
-                Create Quiz
-              </Link>
-            </NavBarHeading>
-          )}
-          {stringifiedUser !== '{}' && (
-            <NavBarHeading>
-              <Link
-                style={linkStyle}
-                to={{
-                  pathname: '/takequiz',
-                  state: { quizSelected: selectedQuiz },
-                }}
-              >
-                Take Quiz
-              </Link>
-            </NavBarHeading>
-          )}
-          {stringifiedUser === '{}' && (
-            <NavBarHeading>
-              <Link style={linkStyle} to='/login'>
-                Log In
-              </Link>
-            </NavBarHeading>
-          )}
-          {stringifiedUser !== '{}' && (
-            <NavBarHeading>
-              <Link style={linkStyle} to='/' onClick={logOut}>
-                Log Out
-              </Link>
-            </NavBarHeading>
-          )}
-          {stringifiedUser !== '{}' && (
-            <NavBarForm>
-              <Select style="color: black" options={allQuizzes} onChange={handleSearchSubmit}>
-                Search for a Quiz to Take!
-              </Select>
-            </NavBarForm>
-          )}
-          <SwitchMode onClick={switchTheme} />
+        <NavBarLogo alt='Page logo' src={logo}></NavBarLogo>
+          <NavBarTitle>QuizKnows</NavBarTitle>
+          {/* <div style={{ marginRight: -100 }}> */}
+            {stringifiedUser === '{ALWAYSFALSE}' && (
+              <NavBarHeading>
+                <Link style={linkStyle} to='/'></Link>
+              </NavBarHeading>
+            )}
+            {stringifiedUser !== '{}'  && (
+              <NavBarHeading>
+                <Link style={linkStyle} to='/home'>
+                  Home
+                </Link>
+              </NavBarHeading>
+            )}
+            {stringifiedUser !== '{}' && (
+              <NavBarHeading>
+                <Link style={linkStyle} to='/user'>
+                  User
+                </Link>
+              </NavBarHeading>
+            )}
+            {stringifiedUser !== '{}' && (
+              <NavBarHeading>
+                <Link style={linkStyle} to='/createquiz'>
+                  Create Quiz
+                </Link>
+              </NavBarHeading>
+            )}
+            {stringifiedUser !== '{}' && (
+              <NavBarHeading>
+                <Link
+                  style={linkStyle}
+                  to={{
+                    pathname: '/takequiz',
+                    state: { quizSelected: selectedQuiz },
+                  }}
+                >
+                  Take Quiz
+                </Link>
+              </NavBarHeading>
+            )}
+            {stringifiedUser === '{}' && (
+              <NavBarHeading>
+                <Link style={linkStyle} to='/login'>
+                  Log In
+                </Link>
+              </NavBarHeading>
+            )}
+            {stringifiedUser !== '{}' && (
+              <NavBarHeading>
+                <Link style={linkStyle} to='/' onClick={logOut}>
+                  Log Out
+                </Link>
+              </NavBarHeading>
+            )}
+            {stringifiedUser !== '{}' && (
+              <NavBarForm>
+                <Select style="color: black" options={allQuizzes} onChange={handleSearchSubmit}>
+                  Search for a Quiz to Take!
+                </Select>
+              </NavBarForm>
+            )}
+            <SwitchMode onClick={switchTheme} style={{ marginRight: 0}}/>
+          {/* </div> */}
         </NavBar>
         <Switch>
           <Route exact path='/'>
@@ -296,16 +298,21 @@ const NavBarTitle = styled.span`
   background-color: var(--blue);
   color: var(--text-color);
   padding: var(--standard-padding);
-  font-size: 60px;
-  font-family: 'Tourney', cursive;
+  font-size: 40px;
+  // font-family: 'Tourney', cursive;
   font-weight: 400;
+  justify-content: left;
 `;
 
 const NavBarLogo = styled.img`
   background-color: var(--blue);
   color: var(--text-color);
   padding: var(--standard-padding);
-  height: 100px;
+  height: 60px;
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  margin-left: 7px;
 `;
 
 const NavBarHeading = styled.span`
@@ -325,14 +332,19 @@ const NavBarForm = styled.form`
 const NavBar = styled.span`
   background-color: var(--blue);
   color: var(--text-color);
-  border-radius: var(--standard-border-radius);
-  box-shadow: var(--standard-shadow);
   display: flex;
-  justify-content: space-evenly;
+  // justify-content: space-evenly;
   align-items: center;
+  margin: -10px;
+  box-shadow: var(--standard-shadow);
 `;
 
 const linkStyle = {
   'text-decoration': 'none',
   'color': 'var(--text-color)',
 };
+
+/*
+style={{ marginLeft: "auto"}}
+style={{ flexDirection: "column", alignSelf: "right" }}
+*/

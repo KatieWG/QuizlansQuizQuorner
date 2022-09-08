@@ -20,17 +20,16 @@ const Container = styled.div`
 
 const Header = styled.div`
   border-radius: var(--standard-border-radius);
-  background-color: var(--blue);
+  // background-color: var(--blue);
   display: grid;
   flex-direction: row;
-  // width: 1000px; //fixed width until I can figure out issue with justify-content
   margin: var(--standard-margin);
-  box-shadow: inset 4px 2px 10px rgba(0, 0, 0, 0.4);
+  // box-shadow: inset 4px 2px 10px rgba(0, 0, 0, 0.4);
 `;
 
 const Body = styled.div`
   border-radius: var(--standard-border-radius);
-  background-color: var(--blue);
+  // background-color: var(--blue);
   display: grid;
   flex-direction: row;
   height: 550px; //fixed until later
@@ -39,7 +38,7 @@ const Body = styled.div`
   overflow: scroll;
   margin-top: 25px;
   margin-bottom: -30px;
-  box-shadow: inset 4px 2px 10px rgba(0, 0, 0, 0.4);
+  // box-shadow: inset 4px 2px 10px rgba(0, 0, 0, 0.4);
 `;
 
 const Footer = styled.div`
@@ -81,7 +80,7 @@ const Start = ({
     return (
       <Container>
         <Header>
-          <h2>Select a quiz to start playing!</h2>
+          <h1>Select a quiz to start playing!</h1>
           <Button
             style={{
               borderRadius: 'var(--standard-border-radius)',
@@ -100,6 +99,7 @@ const Start = ({
             {allQuizzes.map((quiz, idx) => {
               return (
                 <QuizFeedItem
+                  id={idx}
                   quiz={quiz}
                   changeStatusForward={changeStatusForward}
                   chooseQuiz={chooseQuiz}

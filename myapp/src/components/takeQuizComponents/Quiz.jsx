@@ -88,6 +88,15 @@ const Quiz = ({ quiz, changeStatusForward, changeStatusBackward, allQuizzes, sco
     setCounter(counter + 1);
   };
 
+  const questionRandomizer = () => {
+    // accepts state that holds an array all
+    //
+  }
+
+  const checkCorrectness = () => {
+    // accept event.target.outer text and check
+  }
+
   return (
     <Container>
     <Header>{selectedQuiz ? (
