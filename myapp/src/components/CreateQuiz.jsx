@@ -27,7 +27,7 @@ const Gallery = styled.div`
   grid-template-columns: repeat(2, 1fr);
   box-sizing: border-box;
   padding: 15px;
-  gap: 15px;
+  gap: 25px;
   grid-row-start: 2;
   grid-column: 2 / span 1;
   overflow: scroll;

@@ -153,9 +153,10 @@ const FormBox = styled.form`
   box-shadow: var(--standard-shadow);
   padding: var(--standard-padding);
   font-size: 36px;
-  width: 25%;
+  width: 35%;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 100px;
   transform: translate(0%, 20%);
 `
 

@@ -24,6 +24,7 @@ const Header = styled.div`
   display: grid;
   flex-direction: row;
   margin: var(--standard-margin);
+  margin-top: 50px;
   // box-shadow: inset 4px 2px 10px rgba(0, 0, 0, 0.4);
 `;
 

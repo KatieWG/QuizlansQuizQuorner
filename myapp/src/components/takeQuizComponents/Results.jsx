@@ -12,15 +12,15 @@ const Container = styled.div`
   display: grid;
   flex-direction: row;
   grid-template-rows: 20% 70% 10%;
+  margin-top: 70px;
 `;
 
 const Header = styled.div`
   border-radius: var(--standard-border-radius);
-  background-color: var(--blue);
   display: grid;
   flex-direction: row;
   margin: var(--standard-margin);
-  font-size: large;
+  font-size: 3em;
 `;
 
 const Body = styled.div`

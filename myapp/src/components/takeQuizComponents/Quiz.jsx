@@ -11,6 +11,7 @@ const Container = styled.div`
   text-align: center;
   // justify-content: center; //wont allow me to center any other way, but justify also shrinks content
   margin: var(--standard-margin);
+  margin-top: 80px;
   display: grid;
   flex-direction: row;
   grid-template-rows: 12% 83% 5%;
@@ -18,7 +19,7 @@ const Container = styled.div`
 
 const Header = styled.div`
   border-radius: var(--standard-border-radius);
-  background-color: var(--blue);
+  background-color: var(--accent-color);
   display: grid;
   flex-direction: row;
   //fixed width until I can figure out issue with justify-content
@@ -27,16 +28,18 @@ const Header = styled.div`
 
 const Body = styled.div`
   border-radius: var(--standard-border-radius);
-  background-color: var(--blue);
+  background-color: var(--accent-color);
   display: grid;
   flex-direction: row;
   height: 500px; //fixed until later
   margin: var(--standard-margin);
   font-size: x-large;
+  padding: 10px;
 `;
 
 const QuestionDiv = styled.div`
   margin-top: 5%;
+  font-size: 2.1em;
 `;
 
 const Footer = styled.div`
@@ -159,7 +162,7 @@ const Quiz = ({ quiz, changeStatusForward, changeStatusBackward, allQuizzes, sco
             <Button style={{
               height: 40,
               borderRadius: "var(--standard-border-radius)",
-              backgroundColor: "var(--accent-color)",
+              backgroundColor: "var(--blue)",
               color: "black"
               }}
               variant="contained" onClick={previousQuestion}>Back</Button> :
@@ -169,7 +172,7 @@ const Quiz = ({ quiz, changeStatusForward, changeStatusBackward, allQuizzes, sco
         <Button style={{
         height: 40,
         borderRadius: "var(--standard-border-radius)",
-        backgroundColor: "var(--accent-color)",
+        backgroundColor: "var(--blue)",
         color: "black"
         }}
         variant="contained" onClick={report}>Report</Button>
@@ -177,7 +180,7 @@ const Quiz = ({ quiz, changeStatusForward, changeStatusBackward, allQuizzes, sco
         height: 40,
         margin: "var(--standard-margin)",
         borderRadius: "var(--standard-border-radius)",
-        backgroundColor: "var(--accent-color)",
+        backgroundColor: "var(--blue)",
         color: "black"
         }}
         variant="contained" onClick={changeStatusBackward}>Exit</Button>
@@ -186,7 +189,7 @@ const Quiz = ({ quiz, changeStatusForward, changeStatusBackward, allQuizzes, sco
             <Button style={{
               height: 40,
               borderRadius: "var(--standard-border-radius)",
-              backgroundColor: "var(--accent-color)",
+              backgroundColor: "var(--blue)",
               color: "black"
               }}
               variant="contained" onClick={nextQuestion}>Next</Button> :
